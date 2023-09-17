@@ -6,7 +6,7 @@ import fire
 from cvx.boilerplate.parse import toml_data, write, jinja_environment
 
 def parse(file="pyproject.toml"):
-    logger.info(f"parsing toml file {file} in folder {Path(__file__).parent}")
+    logger.info(f"parsing toml file {file} in folder {Path(file).parent}")
     d = toml_data(file)
     for key, value in d.items():
         logger.info(f"  {key}: {value}")
