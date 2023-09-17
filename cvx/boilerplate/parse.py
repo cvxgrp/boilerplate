@@ -8,8 +8,8 @@ def toml_data(toml_file="pyproject.toml"):
     d = toml.load(toml_file)
     return d["tool"]["poetry"]
 
-def jinja_environment():
-    environment = Environment(loader=FileSystemLoader("."))
+def jinja_environment(folder):
+    environment = Environment(loader=FileSystemLoader(folder))
     return environment
 
 def write(template, output_file, **kwargs):
