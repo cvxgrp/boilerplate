@@ -12,7 +12,7 @@ def parse(file="pyproject.toml"):
         logger.info(f"  {key}: {value}")
 
     env = jinja_environment(Path(__file__).parent / "contributions")
-    logger.info("Jinja environment created")
+    logger.info("Jinja environment for contributions created")
 
     templates = [
         ("ContributingTemplate.md", "CONTRIBUTING.md"),
@@ -23,6 +23,25 @@ def parse(file="pyproject.toml"):
         logger.info(f"rendering template {template[0]} to {template[1]}")
         t = env.get_template(template[0])
         write(t, template[1], **d)
+
+    env = jinja_environment(Path(__file__).parent / "book")
+    logger.info("Jinja environment for book created")
+
+    templates =[
+        ("_configTemplate.yml", "book/_config.yml"),
+        ("sphinx/confTemplate.py", "book/sphinx/conf.py")
+    ]
+
+    for template in templates:
+        logger.info(f"rendering template {template[0]} to {template[1]}")
+        t = env.get_template(template[0])
+        write(t, template[1], **d)
+
+    #template = env.get_template("_configTemplate.yml")
+    #write(template, "book/_config.yml", **d)
+
+    #template = env.get_template("book/sphinx/confTemplate.py")
+    #write(template, "book/sphinx/conf.py", **d)
 
     #template = env.get_template("CodeOfConductTemplate.md")
     #write(template, "CODE_OF_CONDUCT.md", **d)
