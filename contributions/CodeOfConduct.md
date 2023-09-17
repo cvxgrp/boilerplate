@@ -1,4 +1,4 @@
-# {{ package }} Code of Conduct
+# {{ name }} Code of Conduct
 
 ## Our Pledge
 
