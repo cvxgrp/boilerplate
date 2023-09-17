@@ -37,6 +37,18 @@ def parse(file="pyproject.toml"):
         t = env.get_template(template[0])
         write(t, template[1], **d)
 
+    env = jinja_environment(Path(__file__).parent / "readme")
+    logger.info("Jinja environment for readme created")
+
+    templates = [
+        ("readmeTemplate.md", "README2.md")
+    ]
+
+    for template in templates:
+        logger.info(f"rendering template {template[0]} to {template[1]}")
+        t = env.get_template(template[0])
+        write(t, template[1], **d)
+
     #template = env.get_template("_configTemplate.yml")
     #write(template, "book/_config.yml", **d)
 

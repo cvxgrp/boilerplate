@@ -2,7 +2,7 @@
 # Learn more at https://jupyterbook.org/customize/config.html
 
 title: {{ name }}
-author: {{ authors }}
+author: {{ authors[0] }}
 only_build_toc_files: true
 
 execute:
