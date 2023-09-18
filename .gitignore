@@ -7,3 +7,6 @@ CONTRIBUTING.md
 CODE_OF_CONDUCT.md
 conf.py
 README2.md
+
+.ruff_cache
+.venv
