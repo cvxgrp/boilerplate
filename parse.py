@@ -6,57 +6,23 @@ import fire
 from cvx.boilerplate.parse import toml_data, write, jinja_environment
 
 def parse(file="pyproject.toml"):
+    def f(source, target):
+        logger.info(f"rendering template {source} to {target}")
+        t = env.get_template(source)
+        write(t, target, **data)
+
     logger.info(f"parsing toml file {file} in folder {Path(file).parent}")
-    d = toml_data(file)
-    for key, value in d.items():
+    data = toml_data(file)
+    for key, value in data.items():
         logger.info(f"  {key}: {value}")
 
-    env = jinja_environment(Path(__file__).parent / "contributions")
-    logger.info("Jinja environment for contributions created")
-
-    templates = [
-        ("ContributingTemplate.md", "CONTRIBUTING.md"),
-        ("CodeOfConductTemplate.md", "CODE_OF_CONDUCT.md")
-    ]
-
-    for template in templates:
-        logger.info(f"rendering template {template[0]} to {template[1]}")
-        t = env.get_template(template[0])
-        write(t, template[1], **d)
-
-    env = jinja_environment(Path(__file__).parent / "book")
-    logger.info("Jinja environment for book created")
-
-    templates =[
-        ("_configTemplate.yml", "book/_config.yml"),
-        ("sphinx/confTemplate.py", "book/sphinx/conf.py")
-    ]
-
-    for template in templates:
-        logger.info(f"rendering template {template[0]} to {template[1]}")
-        t = env.get_template(template[0])
-        write(t, template[1], **d)
-
-    env = jinja_environment(Path(__file__).parent / "readme")
-    logger.info("Jinja environment for readme created")
-
-    templates = [
-        ("readmeTemplate.md", "README2.md")
-    ]
-
-    for template in templates:
-        logger.info(f"rendering template {template[0]} to {template[1]}")
-        t = env.get_template(template[0])
-        write(t, template[1], **d)
-
-    #template = env.get_template("_configTemplate.yml")
-    #write(template, "book/_config.yml", **d)
-
-    #template = env.get_template("book/sphinx/confTemplate.py")
-    #write(template, "book/sphinx/conf.py", **d)
-
-    #template = env.get_template("CodeOfConductTemplate.md")
-    #write(template, "CODE_OF_CONDUCT.md", **d)
+    env = jinja_environment(Path(__file__).parent)
+    logger.info("Jinja environment created")
+    f("contributions/ContributingTemplate.md", "CONTRIBUTING.md"),
+    f("contributions/CodeOfConductTemplate.md", "CODE_OF_CONDUCT.md")
+    f("book/_configTemplate.yml", "book/_config.yml")
+    f("book/sphinx/confTemplate.py", "book/sphinx/conf.py")
+    f("readme/readmeTemplate.md", "README2.md")
 
 
 if __name__ == '__main__':
