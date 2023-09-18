@@ -16,7 +16,7 @@ from loguru import logger
 
 import fire
 
-from cvx.boilerplate.parse import toml_data, write, jinja_environment
+from cvx.cooker.parse import toml_data, write, jinja_environment
 
 
 def parse(file="pyproject.toml"):
