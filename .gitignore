@@ -10,3 +10,6 @@ README2.md
 
 .ruff_cache
 .venv
+.coverage
+htmlcov
+.pytest_cache
