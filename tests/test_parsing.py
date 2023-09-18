@@ -1,4 +1,4 @@
-from cvx.boilerplate.parse import toml_data, jinja_environment
+from cvx.boilerplate.parse import toml_data, jinja_environment, write
 from jinja2 import environment
 
 
@@ -12,3 +12,10 @@ def test_load_data(resource_dir):
 def test_environment(resource_dir):
     env = jinja_environment(resource_dir / "docs")
     assert isinstance(env, environment.Environment)
+
+
+def test_write(resource_dir, tmp_path):
+    data = toml_data(resource_dir / "data.toml")
+    env = jinja_environment(resource_dir / "docs")
+    source = env.get_template("test.md")
+    write(template=source, output_file=tmp_path / "index.md", **data)
