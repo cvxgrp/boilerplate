@@ -1,4 +1,11 @@
-# cvxboilerplate
+# cvxcooker
+
+[![PyPI version](https://badge.fury.io/py/cvxcooker.svg)](https://badge.fury.io/py/cvxcooker)
+[![Apache 2.0 License](https://img.shields.io/badge/License-APACHEv2-brightgreen.svg)](https://github.com/cvxgrp/boilerplate/blob/master/LICENSE)
+[![Downloads](https://static.pepy.tech/personalized-badge/cvxcooker?period=month&units=international_system&left_color=black&right_color=orange&left_text=PyPI%20downloads%20per%20month)](https://pepy.tech/project/cvxcooker)
+[![Coverage Status](https://coveralls.io/repos/github/cvxgrp/cvxcooker/badge.png?branch=main)](https://coveralls.io/github/cvxgrp/cvxcooker?branch=main)
+
+## What is cvxcooker?
 
 This is code to automate the often tedious process of writing
 boilerplate files such as
