@@ -30,12 +30,19 @@ def parse(file="pyproject.toml"):
     for key, value in data.items():
         logger.info(f"  {key}: {value}")
 
+    assert "homepage" in data, "homepage must be specified in pyproject.toml"
+    assert "authors" in data, "authors must be specified in pyproject.toml"
+    assert "name" in data, "name must be specified in pyproject.toml"
+    assert "packages" in data, "packages must be specified in pyproject.toml"
+
     env = jinja_environment(Path(__file__).parent)
     logger.info("Jinja environment created")
     f("templates/contributions/ContributingTemplate.md", "CONTRIBUTING.md"),
     f("templates/contributions/CodeOfConductTemplate.md", "CODE_OF_CONDUCT.md")
-    f("templates/book/_configTemplate.yml", "book/_config.yml")
-    f("templates/book/sphinx/confTemplate.py", "book/sphinx/conf.py")
+    f("templates/book/_config.yml", "book/_config.yml")
+    f("templates/book/sphinx/conf.py", "book/sphinx/conf.py")
+    f("templates/book/docs/api.md", "book/docs/api.md")
+    f("templates/book/docs/reports.md", "book/docs/reports.md")
     f("templates/readme/readmeTemplate.md", "README2.md")
 
 

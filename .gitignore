@@ -2,10 +2,8 @@
 .idea
 __pycache__
 
-_config.yml
 CONTRIBUTING.md
 CODE_OF_CONDUCT.md
-conf.py
 README2.md
 
 .ruff_cache
@@ -13,3 +11,9 @@ README2.md
 .coverage
 htmlcov
 .pytest_cache
+
+book/docs/*.md
+book/_config.yml
+book/sphinx/conf.py
+
+!templates/book
