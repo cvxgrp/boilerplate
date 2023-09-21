@@ -22,7 +22,6 @@ def test_write(resource_dir, tmp_path):
     write(template=source, output_file=tmp_path / "index.md", **data)
 
 
-def test_cook(resource_dir, tmp_path):
+def test_cook(resource_dir):
+    print(resource_dir.parent.parent)
     parse(resource_dir.parent.parent / "pyproject.toml")
-
-    # cook(resource_dir, tmp_path
