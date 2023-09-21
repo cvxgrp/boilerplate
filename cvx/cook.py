@@ -43,7 +43,6 @@ def parse(file="pyproject.toml"):
     f("templates/book/sphinx/conf.py", "book/sphinx/conf.py")
     f("templates/book/docs/api.md", "book/docs/api.md")
     f("templates/book/docs/reports.md", "book/docs/reports.md")
-    f("templates/book/docs/index.md", "book/docs/index.md")
     f("templates/readme/readmeTemplate.md", "README2.md")
 
 
