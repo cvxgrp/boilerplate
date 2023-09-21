@@ -71,6 +71,6 @@ the job
 ```make
 .PHONY: boil
 boil: ## Update the boilerplate code
-	@poetry run pip install cvxcooker
-	@poetry run cook pyproject.toml
+ @poetry run pip install cvxcooker
+ @poetry run cook pyproject.toml
 ```

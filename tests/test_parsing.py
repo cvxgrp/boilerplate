@@ -19,3 +19,11 @@ def test_write(resource_dir, tmp_path):
     env = jinja_environment(resource_dir / "docs")
     source = env.get_template("test.md")
     write(template=source, output_file=tmp_path / "index.md", **data)
+
+
+def test_cook(resource_dir, tmp_path):
+    from cvx.cook import main
+
+    main()
+
+    # cook(resource_dir, tmp_path
