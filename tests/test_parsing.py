@@ -1,4 +1,5 @@
 from cvx.cooker.parse import toml_data, jinja_environment, write
+from cvx.cook import parse
 from jinja2 import environment
 
 
@@ -22,8 +23,6 @@ def test_write(resource_dir, tmp_path):
 
 
 def test_cook(resource_dir, tmp_path):
-    from cvx.cook import main
-
-    main()
+    parse(resource_dir.parent.parent / "pyproject.toml")
 
     # cook(resource_dir, tmp_path
