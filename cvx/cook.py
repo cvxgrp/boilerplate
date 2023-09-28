@@ -37,12 +37,18 @@ def parse(file="pyproject.toml"):
 
     env = jinja_environment(Path(__file__).parent)
     logger.info("Jinja environment created")
+
+    book = Path("book/docs")
+    book.mkdir(exist_ok=True, parents=True)
+    sphinx = Path("book/sphinx")
+    sphinx.mkdir(exist_ok=True, parents=True)
+
     f("templates/contributions/CONTRIBUTING.md", "CONTRIBUTING.md"),
     f("templates/contributions/CODE_OF_CONDUCT.md", "CODE_OF_CONDUCT.md")
     f("templates/book/_config.yml", "book/_config.yml")
-    f("templates/book/sphinx/conf.py", "book/sphinx/conf.py")
-    f("templates/book/docs/api.md", "book/docs/api.md")
-    f("templates/book/docs/reports.md", "book/docs/reports.md")
+    f("templates/book/sphinx/conf.py", sphinx / "conf.py")
+    f("templates/book/docs/api.md", book / "api.md")
+    f("templates/book/docs/reports.md", book / "reports.md")
     f("templates/readme/README.md", "README2.md")
 
 

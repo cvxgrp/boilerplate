@@ -12,8 +12,6 @@ README2.md
 htmlcov
 .pytest_cache
 
-book/docs/*.md
-book/_config.yml
-book/sphinx/conf.py
+book
 
 !templates/book
