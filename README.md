@@ -33,11 +33,8 @@ execute:
 
 parse:
   myst_enable_extensions:
-    - substitution
     - linkify
     - dollarmath
-  myst_substitutions:
-    book_url: {{ homepage }}
 
 # needed for plotly
 sphinx:
