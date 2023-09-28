@@ -19,7 +19,7 @@ Before sending a pull request, make sure you do the following:
 ## Building {{ name }} from source
 
 You'll need to build {{ name }} locally in order to start editing code.
-To install {{ name }} from source, clone the Github
+To install {{ name }} from source, clone the GitHub
 repository, navigate to its root, and run the following command:
 
 ```bash
