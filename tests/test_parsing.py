@@ -24,5 +24,4 @@ def test_write(resource_dir, tmp_path):
 
 
 def test_cook(resource_dir):
-    print(resource_dir.parent.parent)
-    parse(resource_dir.parent.parent / "pyproject.toml")
+    parse(resource_dir / "pyproject.toml")
