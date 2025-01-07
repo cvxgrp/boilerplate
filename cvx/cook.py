@@ -12,11 +12,11 @@
 #    See the License for the specific language governing permissions and
 #    limitations under the License.
 from pathlib import Path
-from loguru import logger
 
 import fire
+from loguru import logger
 
-from cvx.cooker.parse import toml_data, write, jinja_environment
+from cvx.cooker.parse import jinja_environment, toml_data, write
 
 
 def parse(file="pyproject.toml"):
