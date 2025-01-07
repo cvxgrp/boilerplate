@@ -16,13 +16,6 @@ dependencies = [
 repository = "https://github.com/cvxgrp/boilerplate"
 homepage = "https://www.cvxgrp.com/boilerplate"
 
-#[tool.poetry.dependencies]
-#python = ">=3.9.0,<3.13"
-#jinja2= "*"
-#toml = "*"
-#fire = "*"
-#loguru = "*"
-
 [dependency-groups]
 dev = [
     "pytest-cov>=6.0.0",
