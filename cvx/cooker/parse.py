@@ -13,13 +13,13 @@
 #    limitations under the License.
 import codecs
 
-from jinja2 import FileSystemLoader, Environment
 import toml
+from jinja2 import Environment, FileSystemLoader
 
 
 def toml_data(toml_file="pyproject.toml"):
     d = toml.load(toml_file)
-    return d["tool"]["poetry"]
+    return d["project"]
 
 
 def jinja_environment(folder):

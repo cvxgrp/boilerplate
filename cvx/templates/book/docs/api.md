@@ -1,5 +1,4 @@
 # API
 
-## Sphinx
 
-[API]({{ homepage }}/sphinx/)
+[API]({{ homepage }}/pdoc/)
