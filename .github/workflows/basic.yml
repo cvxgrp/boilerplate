@@ -8,15 +8,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4
-    - uses: pre-commit/action@v3.0.1
-      with:
-          extra_args: '--verbose --all-files'
+      - uses: cvxgrp/.github/actions/pre-commit@v2.1.1
 
   test:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout [${{ github.repository }}]
-        uses: actions/checkout@v4
+      - name: "Build the virtual environment for ${{ github.repository }}"
+        uses: cvxgrp/.github/actions/uv/environment@v2.1.1
 
-      - uses: cvxgrp/.github/actions/uv/test@v2.0.8
+      - uses: cvxgrp/.github/actions/test@v2.1.1
