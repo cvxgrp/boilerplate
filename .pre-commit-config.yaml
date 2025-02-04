@@ -22,11 +22,3 @@ repos:
     rev: v3.19.1
     hooks:
       - id: pyupgrade
-
-  - repo: https://github.com/Lucas-C/pre-commit-hooks
-    rev: v1.5.4
-    hooks:
-        - id: insert-license
-          files: ^(cvx/cooker)
-          args:
-            ['--license-filepath', 'copyright.txt', '--no-extra-eol']
