@@ -22,3 +22,12 @@ repos:
     rev: v3.19.1
     hooks:
       - id: pyupgrade
+
+  - repo: https://github.com/python-jsonschema/check-jsonschema
+    rev: 0.33.0
+    hooks:
+      - id: check-renovate
+        args: [ "--verbose" ]
+
+      - id: check-github-workflows
+        args: ["--verbose"]
