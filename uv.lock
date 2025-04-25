@@ -96,7 +96,7 @@ dependencies = [
     { name = "toml" },
 ]
 
-[package.dev-dependencies]
+[package.optional-dependencies]
 dev = [
     { name = "pre-commit" },
     { name = "pytest" },
@@ -108,15 +108,12 @@ requires-dist = [
     { name = "fire", specifier = ">=0.7.0" },
     { name = "jinja2", specifier = ">=3.1.5" },
     { name = "loguru", specifier = ">=0.7.3" },
+    { name = "pre-commit", marker = "extra == 'dev'", specifier = ">=4.0.1" },
+    { name = "pytest", marker = "extra == 'dev'", specifier = ">=8.3.3" },
+    { name = "pytest-cov", marker = "extra == 'dev'", specifier = ">=6.0.0" },
     { name = "toml", specifier = ">=0.10.2" },
 ]
-
-[package.metadata.requires-dev]
-dev = [
-    { name = "pre-commit", specifier = ">=4.0.1" },
-    { name = "pytest", specifier = ">=8.3.3" },
-    { name = "pytest-cov", specifier = ">=6.0.0" },
-]
+provides-extras = ["dev"]
 
 [[package]]
 name = "distlib"
