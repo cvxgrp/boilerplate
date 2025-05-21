@@ -33,7 +33,6 @@ def parse(file="pyproject.toml"):
     assert "authors" in data, "authors must be specified in pyproject.toml"
     assert "name" in data, "name must be specified in pyproject.toml"
 
-
     env = jinja_environment(Path(__file__).parent)
     logger.info("Jinja environment created")
 
@@ -42,7 +41,7 @@ def parse(file="pyproject.toml"):
     sphinx = Path("book/sphinx")
     sphinx.mkdir(exist_ok=True, parents=True)
 
-    f("templates/contributions/CONTRIBUTING.md", "CONTRIBUTING.md"),
+    (f("templates/contributions/CONTRIBUTING.md", "CONTRIBUTING.md"),)
     f("templates/contributions/CODE_OF_CONDUCT.md", "CODE_OF_CONDUCT.md")
     f("templates/book/_config.yml", "book/_config.yml")
     f("templates/book/docs/api.md", book / "api.md")
